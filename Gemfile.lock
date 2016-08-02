@@ -41,25 +41,77 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (6.0.3)
     builder (3.2.2)
+    capybara (2.7.1)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     concurrent-ruby (1.0.2-java)
+    cucumber (2.4.0)
+      builder (>= 2.1.2)
+      cucumber-core (~> 1.5.0)
+      cucumber-wire (~> 0.0.1)
+      diff-lcs (>= 1.1.3)
+      gherkin (~> 4.0)
+      multi_json (>= 1.7.5, < 2.0)
+      multi_test (>= 0.1.2)
+    cucumber-core (1.5.0)
+      gherkin (~> 4.0)
+    cucumber-rails (1.4.3)
+      capybara (>= 1.1.2, < 3)
+      cucumber (>= 1.3.8, < 3)
+      mime-types (>= 1.16, < 4)
+      nokogiri (~> 1.5)
+      railties (>= 3, < 5)
+    cucumber-wire (0.0.1)
+    daemons (1.2.3)
+    daemons-rails (1.2.1)
+      daemons
+      multi_json (~> 1.0)
+    database_cleaner (1.5.3)
+    delayed_job (4.1.2)
+      activesupport (>= 3.0, < 5.1)
+    delayed_job_active_record (4.1.1)
+      activerecord (>= 3.0, < 5.1)
+      delayed_job (>= 3.0, < 5)
+    diff-lcs (1.2.5)
+    docile (1.1.5)
     erubis (2.7.0)
+    factory_girl (4.7.0)
+      activesupport (>= 3.0.0)
+    gherkin (4.0.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    jbuilder (2.6.0)
+      activesupport (>= 3.0.0, < 5.1)
+      multi_json (~> 1.2)
     jdbc-sqlite3 (3.8.11.2)
     jruby-openssl (0.9.17-java)
     json (1.8.3-java)
+    json_spec (1.1.4)
+      multi_json (~> 1.0)
+      rspec (>= 2.0, < 4.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    march_hare (2.17.0-java)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     minitest (5.9.0)
+    multi_json (1.12.1)
+    multi_test (0.1.2)
     nokogiri (1.6.8-java)
+    passenger (5.0.30)
+      rack
+      rake (>= 0.8.1)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -91,6 +143,34 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (11.2.2)
+    rspec (3.5.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+    rspec-core (3.5.2)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-rails (3.5.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
+    simplecov (0.12.0)
+      docile (~> 1.1.0)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -102,15 +182,31 @@ GEM
     thread_safe (0.3.5-java)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   java
 
 DEPENDENCIES
   activerecord-jdbcsqlite3-adapter
+  capybara
+  cucumber-rails
+  daemons
+  daemons-rails
+  database_cleaner
+  delayed_job_active_record
+  factory_girl
+  jbuilder
   jruby-openssl
+  json_spec
+  march_hare
+  passenger
   rails (~> 4.2.7)
   rails-api
+  rspec-rails
+  shoulda-matchers
+  simplecov
 
 BUNDLED WITH
    1.12.5
